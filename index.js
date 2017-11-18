@@ -8,7 +8,9 @@ app.set("json spaces", 4);
 
 consign()
     .include('models')
+    .then("libs/middlewares.js")
     .then('routes')
+    .then("libs/boot.js")
     .into(app);
 
 // app.get("/", (req, res) => res.json({status: "NTask API"}));
@@ -23,4 +25,4 @@ consign()
 //      });
 //    });
 
-app.listen(PORT, () => console.log(`NTask API - Port ${PORT}`));
+// app.listen(PORT, () => console.log(`NTask API - Port ${PORT}`));
